@@ -27,21 +27,15 @@ class MyApp extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(
-                  color: Colors.green,
-                  width: 50,
-                  height: 50,
+                ColoredContainer(
+                  cor: Colors.green,
                 ),
-                Container(
-                  color: Colors.yellow,
-                  width: 50,
-                  height: 50,
+                ColoredContainer(
+                  cor: Colors.yellow,
                 ),
-                Container(
-                  color: Colors.red,
-                  width: 50,
-                  height: 50,
-                ),
+                ColoredContainer(
+                  cor: Colors.red,
+                )
               ],
             ),
           )
@@ -58,6 +52,20 @@ class CardContainer extends StatelessWidget {
       color: Colors.white,
       height: 100,
       margin: EdgeInsets.only(top: 40),
+    );
+  }
+}
+
+class ColoredContainer extends StatelessWidget {
+  final Color cor;
+
+  ColoredContainer({Key key, this.cor}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: cor,
+      width: 50,
+      height: 50,
     );
   }
 }
